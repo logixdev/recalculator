@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <title>Restaumatic a portal - kalkulator</title>
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Restaumatic Logo">
+  </header>
+  <section id="portal" class="calculator">
+    <h2>Portal</h2>
+    <label for="commissionPortal">Wysokość prowizji (%)</label>
+    <input type="number" id="commissionPortal" placeholder="Domyślnie: 16" value="16">
+    <label for="orderValuePortal">Wartość zamówienia (PLN)</label>
+    <input type="number" id="orderValuePortal" placeholder="Domyślnie: 77" value="77">
+    <label for="discountPortal">Rabat (%)</label>
+    <input type="number" id="discountPortal" placeholder="Domyślnie: 0" value="0">
+    <button onclick="calculate('Portal')">Oblicz</button>
+    <div class="result">
+      <h3>Wyniki:</h3>
+      <p id="calculatedOrderValuePortal">Wartość zamówienia po zniżce: 0 PLN</p>
+      <p id="calculatedCommissionPortal">Prowizja do zapłaty: 0 PLN</p>
+      <p id="calculatedRevenuePortal">Przychód: 0 PLN</p>
+    </div>
+  </section>
+  <section id="restaumatic" class="calculator">
+    <h2>Restaumatic</h2>
+    <label for="commissionRestaumatic">Wysokość prowizji (%)</label>
+    <input type="number" id="commissionRestaumatic" placeholder="Domyślnie: 4.9" value="4.9">
+    <label for="orderValueRestaumatic">Wartość zamówienia (PLN)</label>
+    <input type="number" id="orderValueRestaumatic" placeholder="Domyślnie: 77" value="77">
+    <label for="discountRestaumatic">Rabat (%)</label>
+    <input type="number" id="discountRestaumatic" placeholder="Domyślnie: 10" value="10">
+    <button onclick="calculate('Restaumatic')">Oblicz</button>
+    <div class="result">
+      <h3>Wyniki:</h3>
+      <p id="calculatedOrderValueRestaumatic">Wartość zamówienia po zniżce: 0 PLN</p>
+      <p id="calculatedCommissionRestaumatic">Prowizja do zapłaty: 0 PLN</p>
+      <p id="calculatedRevenueRestaumatic">Przychód: 0 PLN</p>
+    </div>
+  </section>
+  <section class="revenue-difference">
+    <h3>Różnica w przychodach:</h3>
+    <p id="revenueDifference">0 PLN (brak różnicy)</p>
+  </section>
+  <footer>
+    <p>&copy; 2023 Michał Kansy</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
