@@ -15,12 +15,17 @@ function calculate(calculatorType) {
   document.getElementById(`calculatedCommission${calculatorType}`).textContent = `Prowizja do zapłaty: ${calculatedCommission} PLN`;
   document.getElementById(`calculatedRevenue${calculatorType}`).textContent = `Przychód: ${calculatedRevenue} PLN`;
 
-  const revenueDifference = Math.abs(
+  const revenueDifference = (
     parseFloat(document.getElementById('calculatedRevenuePortal').textContent.split(' ')[1]) -
     parseFloat(document.getElementById('calculatedRevenueRestaumatic').textContent.split(' ')[1])
   ).toFixed(2);
 
-  document.getElementById('revenueDifference').textContent = `${revenueDifference} PLN`;
+  const color = revenueDifference <= 0 ? "green" : "red";
+  const text = revenueDifference <= 0
+    ? `${Math.abs(revenueDifference)} PLN (na korzyść Restaumatic)`
+    : `${Math.abs(revenueDifference)} PLN (na korzyść portalu)`;
+  document.getElementById('revenueDifference').textContent = text;
+  document.getElementById('revenueDifference').style.backgroundColor = color;
 }
 
 window.onload = function () {
