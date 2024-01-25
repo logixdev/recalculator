@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl-PL">
+<html lang="en">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5LR0N8KNYB"></script>
   <script>
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <title>Restaumatic a portal - kalkulator</title>
+  <title>Restaumatic vs portal - calculator</title>
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Restaumatic Logo">
+    <img src="../images/logo.png" alt="Restaumatic Logo">
   </header>
-  <p id="languageSelection">Wybierz język: <span id="plLanguage">Polski 🇵🇱</span>, <a href="/en" id="enLanguage">English 🇬🇧</a>.</p>
+  <p id="languageSelection">Choose language: <span id="enLanguage">English 🇬🇧</span>, <a href="../" id="plLanguage">Polski 🇵🇱</a>.</p>
   <section id="currency-selection">
-    <label for="currency">Wybierz walutę:</label>
+    <label for="currency">Choose currency:</label>
     <select id="currency" onchange="setDefaultOrderValue()">
       <option value="PLN">PLN</option>
       <option value="EUR">EUR</option>
@@ -32,39 +32,39 @@
   </section>
   <section id="portal" class="calculator">
     <h2>Portal</h2>
-    <label for="commissionPortal">Wysokość prowizji (%)</label>
+    <label for="commissionPortal">Commission rate (%)</label>
     <input type="number" id="commissionPortal" placeholder="Domyślnie: 16" value="16">
-    <label for="orderValuePortal">Wartość zamówienia (<span class="currencySymbol">PLN</span>)</label>
+    <label for="orderValuePortal">Order value (<span class="currencySymbol">PLN</span>)</label>
     <input type="number" id="orderValuePortal" placeholder="Domyślnie: 77" value="77">
-    <label for="discountPortal">Rabat (%)</label>
+    <label for="discountPortal">Discount (%)</label>
     <input type="number" id="discountPortal" placeholder="Domyślnie: 0" value="0">
-    <button onclick="calculate('Portal')">Oblicz</button>
+    <button onclick="calculate('Portal')">Calculate</button>
     <div class="result">
-      <h3>Wyniki:</h3>
-      <p id="calculatedOrderValuePortal">Wartość zamówienia po zniżce: 0 <span class="currencySymbol">PLN</span></p>
-      <p id="calculatedCommissionPortal">Prowizja do zapłaty: 0 <span class="currencySymbol">PLN</span></p>
-      <p id="calculatedRevenuePortal">Przychód: 0 <span class="currencySymbol">PLN</span></p>
+      <h3>Results:</h3>
+      <p id="calculatedOrderValuePortal">Order value after discount: 0 <span class="currencySymbol">PLN</span></p>
+      <p id="calculatedCommissionPortal">Commission to be paid: 0 <span class="currencySymbol">PLN</span></p>
+      <p id="calculatedRevenuePortal">Revenue: 0 <span class="currencySymbol">PLN</span></p>
     </div>
   </section>
   <section id="restaumatic" class="calculator">
     <h2>Restaumatic</h2>
-    <label for="commissionRestaumatic">Wysokość prowizji (%)</label>
+    <label for="commissionRestaumatic">Commission rate (%)</label>
     <input type="number" id="commissionRestaumatic" placeholder="Domyślnie: 4.9" value="4.9">
-    <label for="orderValueRestaumatic">Wartość zamówienia (<span class="currencySymbol">PLN</span>)</label>
+    <label for="orderValueRestaumatic">Order value (<span class="currencySymbol">PLN</span>)</label>
     <input type="number" id="orderValueRestaumatic" placeholder="Domyślnie: 77" value="77">
-    <label for="discountRestaumatic">Rabat (%)</label>
+    <label for="discountRestaumatic">Discount (%)</label>
     <input type="number" id="discountRestaumatic" placeholder="Domyślnie: 10" value="10">
-    <button onclick="calculate('Restaumatic')">Oblicz</button>
+    <button onclick="calculate('Restaumatic')">Calculate</button>
     <div class="result">
-      <h3>Wyniki:</h3>
-      <p id="calculatedOrderValueRestaumatic">Wartość zamówienia po zniżce: 0 <span class="currencySymbol">PLN</span></p>
-      <p id="calculatedCommissionRestaumatic">Prowizja do zapłaty: 0 <span class="currencySymbol">PLN</span></p>
-      <p id="calculatedRevenueRestaumatic">Przychód: 0 <span class="currencySymbol">PLN</span></p>
+      <h3>Results:</h3>
+      <p id="calculatedOrderValueRestaumatic">Order value after discount: 0 <span class="currencySymbol">PLN</span></p>
+      <p id="calculatedCommissionRestaumatic">Commission to be paid: 0 <span class="currencySymbol">PLN</span></p>
+      <p id="calculatedRevenueRestaumatic">Revenue: 0 <span class="currencySymbol">PLN</span></p>
     </div>
   </section>
   <section class="revenue-difference">
-    <h3>Różnica w przychodach:</h3>
-    <p id="revenueDifference">Obliczanie...</p>
+    <h3>Difference in revenues:</h3>
+    <p id="revenueDifference">Calculating...</p>
   </section>
   <footer>
     <p>&copy; 2023 Michał Kansy</p>

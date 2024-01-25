@@ -44,9 +44,9 @@ function calculate(calculatorType) {
 
   const currencySymbol = document.getElementById('currency').value;
 
-  document.getElementById(`calculatedOrderValue${calculatorType}`).textContent = `Wartość zamówienia po zniżce: ${discountedOrderValue.toFixed(2)} ${currencySymbol}`;
-  document.getElementById(`calculatedCommission${calculatorType}`).textContent = `Prowizja do zapłaty: ${calculatedCommission} ${currencySymbol}`;
-  document.getElementById(`calculatedRevenue${calculatorType}`).textContent = `Przychód: ${calculatedRevenue} ${currencySymbol}`;
+  document.getElementById(`calculatedOrderValue${calculatorType}`).textContent = `Order value after discount: ${discountedOrderValue.toFixed(2)} ${currencySymbol}`;
+  document.getElementById(`calculatedCommission${calculatorType}`).textContent = `Commission to be paid: ${calculatedCommission} ${currencySymbol}`;
+  document.getElementById(`calculatedRevenue${calculatorType}`).textContent = `Revenue: ${calculatedRevenue} ${currencySymbol}`;
 
   const revenueDifference = (
     parseFloat(document.getElementById('calculatedRevenuePortal').textContent.split(' ')[1]) -
@@ -55,8 +55,8 @@ function calculate(calculatorType) {
 
   const color = revenueDifference <= 0 ? "green" : "red";
   const text = revenueDifference <= 0
-    ? `${Math.abs(revenueDifference)} ${currencySymbol} (na korzyść Restaumatic)`
-    : `${Math.abs(revenueDifference)} ${currencySymbol} (na korzyść portalu)`;
+    ? `${Math.abs(revenueDifference)} ${currencySymbol} (in favor of Restaumatic)`
+    : `${Math.abs(revenueDifference)} ${currencySymbol} (in favor of the portal)`;
   document.getElementById('revenueDifference').textContent = text;
   document.getElementById('revenueDifference').style.backgroundColor = color;
 }
