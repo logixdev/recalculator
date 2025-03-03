@@ -4,9 +4,29 @@ body {
   background-color: #ffffff;
 }
 
+#info-bar {
+  width: 100%;
+  background-color: #ff0000;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#info-bar a {
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 header {
   text-align: left;
   margin-bottom: 20px;
+  margin-top: 60px;
 }
 
 img {
